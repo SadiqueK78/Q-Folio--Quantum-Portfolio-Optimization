@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@theme {
+  --color-canvas: #0a0c10;
+  --color-surface: #12151c;
+  --color-surface-raised: #171b24;
+  --color-hairline: #232838;
+  --color-ink: #e7e9ee;
+  --color-ink-muted: #8992a6;
+  --color-ink-faint: #5b6478;
+  --color-amber: #e3a857;
+  --color-amber-dim: #8a6a3d;
+  --color-signal-pos: #4abf8a;
+  --color-signal-neg: #e1665b;
+  --color-quantum: #8b7fe8;
+  --color-quantum-dim: #4a4470;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-amber-dim);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-canvas); }
+::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-faint); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.input {
+  width: 100%;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-hairline);
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-amber);
+}
