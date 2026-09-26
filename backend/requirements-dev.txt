@@ -1,0 +1,7 @@
+# Local development and tests. Vercel installs only requirements.txt, so
+# pyarrow (parquet cache; CSV fallback is used without it) stays out of the
+# deployed bundle to keep it under the function size limit.
+-r requirements.txt
+pyarrow>=16.0
+pytest>=8.0
+httpx>=0.27

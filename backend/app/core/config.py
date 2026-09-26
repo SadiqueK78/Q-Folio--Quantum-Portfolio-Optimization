@@ -8,6 +8,7 @@ codebase never hard-codes a number that should be a setting.
 """
 from __future__ import annotations
 
+import os
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -18,7 +19,8 @@ class Settings(BaseSettings):
     # --- Data ---
     price_provider: str = "yahoo"          # only free/open sources are supported
     historical_years: int = 10
-    data_dir: str = "data_cache"
+    # Vercel functions can only write under /tmp.
+    data_dir: str = "/tmp/data_cache" if os.environ.get("VERCEL") else "data_cache"
     cache_hours_historical: int = 24
     cache_minutes_latest: int = 5
     cache_minutes_news: int = 10

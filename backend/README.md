@@ -86,7 +86,7 @@ if the live fetch fails.
 
 ```bash
 cd backend
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 cp .env.example .env
 
 # Full pipeline demo (prints every stage to the console)
