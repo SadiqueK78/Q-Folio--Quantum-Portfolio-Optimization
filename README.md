@@ -1,4 +1,4 @@
-# Portfolio Optimization Platform
+# Q-Folio :  Portfolio Optimization Platform
 
 A research and decision-support platform for classical and quantum-inspired portfolio optimization. The project combines a FastAPI/Python backend with a React/TypeScript dashboard for market data, financial analytics, portfolio construction, efficient-frontier analysis, QUBO/QAOA experiments, backtesting, and news-event monitoring.
 
